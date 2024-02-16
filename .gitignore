@@ -12,3 +12,7 @@ docs/
 
 # Dotenv file
 .env
+# Makefile
+Makefile
+#mac files
+.DS_store
