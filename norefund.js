@@ -79,7 +79,6 @@ rl.on('close', () => {
 
         // Parse CSV line
         const [tx, blockNumber, time, UTC, from, to, tokenValue, valueUSD, CA, TokenName, tokenSymbol] = parseCSVLine(line);
-        let swap = true;
         let value = parseFloat(tokenValue);
         let WETHTransfer = tokenSymbol == 'WETH'
         let sell = from == poolAddress;
@@ -95,24 +94,15 @@ rl.on('close', () => {
             }else{
                 allTx[tx].WETHFlow += value;
             }
-            // Check if it's a swap
-            // if (allTx[tx] && allTx[tx].WETHflow !== 0 && allTx[tx].NOflow !== 0 ){//&& Math.sign(allTx[tx].WETHflow) !== Math.sign(allTx[tx].NOflow)) {
-            //     swap = true;
-            // } else {
-            //     console.log('not a swap')
-            //     console.log(tx);
-            // }
-            if(swap){
-                if (!targets[from]) {
-                    targets[from] = {
-                        firstBlock: blockNumber,
-                        WETHflow: -value,
-                        NOflow: 0,
-                        beforeAnnouncement: parseInt(blockNumber) < announcementBlockNumber
-                    };
-                } else {
-                    targets[from].WETHflow -= value;
-                }
+            if (!targets[from]) {
+                targets[from] = {
+                    firstBlock: blockNumber,
+                    WETHflow: -value,
+                    NOflow: 0,
+                    beforeAnnouncement: parseInt(blockNumber) < announcementBlockNumber
+                };
+            } else {
+                targets[from].WETHflow -= value;
             }
             
         }
