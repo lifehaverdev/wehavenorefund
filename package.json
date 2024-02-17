@@ -1,0 +1,32 @@
+{
+  "name": "wehavenorefundjs",
+  "version": "1.0.0",
+  "description": "calculate refund to holders",
+  "main": "norefund.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifehaverdev/wehavenorefund.git"
+  },
+  "keywords": [
+    "refund",
+    "sleuth",
+    "bots"
+  ],
+  "author": "arthurt and chatGPT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lifehaverdev/wehavenorefund/issues"
+  },
+  "homepage": "https://github.com/lifehaverdev/wehavenorefund#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "readline": "^1.3.0"
+  }
+}

@@ -1,3 +1,0 @@
-forge-std/=lib/forge-std/src
-solady/=lib/solady/src
-dn404/=lib/dn404/src
