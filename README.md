@@ -10,6 +10,6 @@ deploytoclosenohandletxs.csv is all transactions interacting with nohandle contr
 
 #arthurt proposal for path forward: (pending calculation of where we stand)
 
-calculate refund of not-bot money losses based off of entry price and assumption that bot money is all sell pressure. Reliquify pool with bot money and resume trading. 
+calculate refund of not-bot money to holders based off of entry price and assumption that bot money is all sell pressure. Reliquify pool with bot money and resume trading. 
 
 am i crazy?
