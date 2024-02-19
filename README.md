@@ -1,15 +1,66 @@
-##Operation wehavenorefund
+## Foundry
 
-#introduction
-We launched and got botted too hard.
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-#method
-We must calculate in flows of ETH and deliniate bots and not bots deliniated by transactions before the announcement. Then decide a refund strategy and prepare to use GASLITEAIRDROP with weth.
+Foundry consists of:
 
-deploytoclosenohandletxs.csv is all transactions interacting with nohandle contract from block 19235497 to block 19235846 (deploy to market close) exported from etherscan. deploytoclosepoolerc20.csv is all the erc20 transfers performed on the pool. nohandleholders is all the holders as of 12:36PM CST February 16 2024. Announcement was block 19235523.
+-   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+-   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+-   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-#arthurt proposal for path forward: (pending calculation of where we stand)
+## Documentation
 
-calculate refund of not-bot money to holders based off of entry price and assumption that bot money is all sell pressure. Reliquify pool with bot money and resume trading. 
+https://book.getfoundry.sh/
 
-am i crazy?
+## Usage
+
+### Build
+
+```shell
+$ forge build
+```
+
+### Test
+
+```shell
+$ forge test
+```
+
+### Format
+
+```shell
+$ forge fmt
+```
+
+### Gas Snapshots
+
+```shell
+$ forge snapshot
+```
+
+### Anvil
+
+```shell
+$ anvil
+```
+
+### Deploy
+
+```shell
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
+### Cast
+
+```shell
+$ cast <subcommand>
+```
+
+### Help
+
+```shell
+$ forge --help
+$ anvil --help
+$ cast --help
+```
