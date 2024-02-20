@@ -16,3 +16,6 @@ docs/
 Makefile
 #mac files
 .DS_store
+
+#walletPasswords
+dn404

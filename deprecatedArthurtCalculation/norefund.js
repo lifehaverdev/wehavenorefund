@@ -3,7 +3,7 @@ const readline = require('readline');
 
 const announcementBlockNumber = 19235523;
 const poolAddress = "0x945295d8efe2b63ad5a9239ac5c1b4d28e90bb7c";
-const etherscanExportCSV = 'deploytoclosepoolerc20.csv'
+const etherscanExportCSV = './deprecatedArthurtCalculation/deploytoclosepoolerc20.csv'
 
 let allTx = {};
 let targets = {};

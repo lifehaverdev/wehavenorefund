@@ -1,0 +1,26 @@
+-include .env
+
+testAir:
+	forge test -vvv --fork-url $(INFUR) --fork-block-number 19265661
+
+testAirSep:
+	forge test -vv --fork-url $(TESTINFURA) --fork-block-number 5324503
+
+testAirLocal:
+	forge test -vvv
+
+sepTest-deposit:
+	cast send $(TESTWETH) --keystore key --password PASSWORD --rpc-url $(TESTINFURA) "deposit()" --value $(TESTGIFT) --confirmations 5
+
+sepTest-airdrop:
+#	cast send $(TESTWETH) --keystore key --password PASSWORD --rpc-url $(TESTINFURA) "deposit()" --value $(TESTGIFT) --confirmations 5
+#	cast send $(TESTWETH) --keystore key --password PASSWORD --rpc-url $(TESTINFURA) "approve(address,uint256)" $(GASLITE) $(TESTGIFT) --confirmations 5
+	cast send $(GASLITE) --keystore key --password PASSWORD --rpc-url $(TESTINFURA) "airdropERC20(address,address[],uint256[],uint256)" $(TESTWETH) $(PEOPLE) $(TESTAMOUNTS) $(TESTGIFT) 
+	@echo "check tx"
+
+#Error: 
+#(code: -32000, message: execution reverted, data: None)
+#make: *** [sepTest-airdrop] Error 1
+
+#pivoting to gaslite website (it works) T^T
+
